@@ -1,0 +1,27 @@
+# NAT-related stuff: specifically, you can configure the STUN/TURN
+# servers to use to gather candidates if the gateway is behind a NAT,
+# and srflx/relay candidates are needed. In case STUN is not enough and
+# this is needed (it shouldn't), you can also configure Janus to use a
+# TURN server# please notice that this does NOT refer to TURN usage in
+# browsers, but in the gathering of relay candidates by Janus itself,
+# e.g., if you want to limit the ports used by a Janus instance on a
+# private machine. Furthermore, you can choose whether Janus should be
+# configured to do full-trickle (Janus also trickles its candidates to
+# users) rather than the default half-trickle (Janus supports trickle
+# candidates from users, but sends its own within the SDP), and whether
+# it should work in ICE-Lite mode (by default it doesn't). Finally,
+# you can also enable ICE-TCP support (beware that this may lead to problems
+# if you do not enable ICE Lite as well), choose which interfaces should
+# be used for gathering candidates, and enable or disable the
+# internal libnice debugging, if needed.
+nat: {
+	# In case you're deploying Janus on a server which is configured with
+	# a 1:1 NAT (e.g., Amazon EC2), you might want to also specify the public
+	# address of the machine using the setting below. This will result in
+	# all host candidates (which normally have a private IP address) to
+	# be rewritten with the public address provided in the settings. As
+	# such, use the option with caution and only if you know what you're doing.
+	# Make sure you keep ICE Lite disabled, though, as it's not strictly
+	# speaking a publicly reachable server, and a NAT is still involved.
+	#nat_1_1_mapping = "127.0.0.1"
+}

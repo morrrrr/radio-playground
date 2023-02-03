@@ -1,0 +1,16 @@
+.hidden {
+    display:none;
+}
+
+#play-button {
+    width: 100px;
+}
+
+#play-container {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+header {
+    font-weight: bold;
+}

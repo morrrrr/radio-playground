@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>webrtc radio</title>
+    <link rel="stylesheet" href="/css/radio.css">
+    </link>
+</head>
+
+<body>
+    <div>
+        <audio id="player" class="hidden" controls></audio>
+        <div id="play-container">
+            <header>Radio with WebRTC</header>
+            <p id="stream-info"></p>
+            <button onclick="togglePlay()">
+                <img id="play-button" src="/resources/play.svg" />
+            </button>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/janus-gateway@0.2.3/html/janus.nojquery.js">
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/6.1.4/adapter.min.js"></script>
+    <script type="text/javascript" src="/js/janus-streaming.js"></script>
+    <script type="text/javascript" src="/js/radio.js"></script>
+</body>
+
+</html>
