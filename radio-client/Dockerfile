@@ -1,4 +1,5 @@
 FROM ubuntu:focal
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -y update && \
 	apt-get install -y \
@@ -6,7 +7,7 @@ RUN apt-get -y update && \
 		nodejs && \
 	apt-get clean
 	
-EXPOSE 8000
+EXPOSE 8083
 
 ADD web-app /web-app
 

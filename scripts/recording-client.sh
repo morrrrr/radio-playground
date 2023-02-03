@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run Recording Client
-cd recording-client
+cd ../recording-client
 
 docker stop recording-client
 docker rm recording-client

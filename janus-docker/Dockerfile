@@ -144,7 +144,6 @@ RUN groupadd -g ${app_uid} app && useradd -r -u ${app_uid} -g app app
 #COPY entrypoint.sh /entrypoint.sh
 #RUN chmod +x /entrypoint.sh
 ADD templates /templates
-ADD audio /audio 
 
 # Start the gateway
 ENV LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib/x86_64-linux-gnu

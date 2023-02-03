@@ -69,7 +69,6 @@ function createSession() {
                     }
                     if (jsep) {
                         Janus.debug("Handling SDP as well...", jsep);
-                        var stereo = (jsep.sdp.indexOf("stereo=1") !== -1);
                         // Offer from the plugin, let's answer
                         streaming.createAnswer({
                             jsep: jsep,
