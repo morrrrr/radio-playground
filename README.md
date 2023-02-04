@@ -2,7 +2,7 @@
 
 This is an educational project purposed to provide playground for different audio streaming solutions. Multiple docker containers play their role in the radio streaming network. 
 
-At the current stage, the playground allows comparing the WebRTC and adaptive HTTP streaming.
+At the current stage, the playground provides the WebRTC and HLS streaming.
 
 The following containers have been created:
 
