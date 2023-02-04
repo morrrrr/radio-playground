@@ -13,18 +13,8 @@ services:
       - "7088:7088"
       - "7089:7089"
     volumes:
-      - "../janus-server/templates:/usr/local/etc/janus"
+      - "./janus-server/templates:/usr/local/etc/janus"
     restart: always
-
-  # janus-server:
-  #   container_name: janus-server
-  #   image: janus-server
-  #   build: ../janus-server
-  #   ports:
-  #     - "8087:8087"
-  #     - "8089:8089"
-  #     - "8889:8889"
-  #     - "5002:5002"
     
   hls-server:
     container_name: hls-server
@@ -36,11 +26,11 @@ services:
   radio-client:
     container_name: radio-client
     image: radio-client
-    build: ../radio-client
+    build: ./radio-client
     ports:
       - "8083:8083"
 
   recording-client:
     container_name: recording-client
     image: recording-client
-    build: ../recording-client
+    build: ./recording-client
