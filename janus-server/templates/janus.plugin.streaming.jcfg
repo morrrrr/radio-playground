@@ -124,7 +124,7 @@ general: {
 radio-from-file: {
 	type = "live"
 	id = 1
-	description = "Radio Stream from a file source"
+	description = "Radio stream from a file source"
 	filename = "/audio/radio.mulaw"
 	audio = true
 	video = false
@@ -135,7 +135,7 @@ radio-from-file: {
 radio-stream: {
 	type = "rtp"
 	id = 2
-	description = "Radio Stream from ffmpeg"
+	description = "Radio stream from a remote recording client"
 	metadata = "This is my radio stream."
 	audio = true
 	video = false

@@ -8,5 +8,6 @@ routes(app); // register routes
 app.listen(port);
 app.use(express.static('public'));
 
-
+var cors = require('cors');
+app.use(cors());
 console.log('Radio App started on: ' + port);

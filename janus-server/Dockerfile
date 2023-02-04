@@ -86,6 +86,8 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
     && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 FROM ubuntu:focal 
+ENV DEBIAN_FRONTEND=noninteractive
+
 ARG app_uid=999
 ARG ulimit_nofile_soft=524288
 ARG ulimit_nofile_hard=1048576
@@ -117,13 +119,13 @@ RUN apt-get -y update && \
 		libusrsctp1 \
 		libwebsockets15 \
 		libnanomsg5 \
+		vlc \
 		librabbitmq4 && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
 COPY --from=0 /usr/lib/libsrtp2.so.1 /usr/lib/libsrtp2.so.1
 RUN ln -s /usr/lib/libsrtp2.so.1 /usr/lib/libsrtp2.so
-
 
 COPY --from=build /usr/local /usr/local
 
@@ -144,6 +146,8 @@ RUN groupadd -g ${app_uid} app && useradd -r -u ${app_uid} -g app app
 #COPY entrypoint.sh /entrypoint.sh
 #RUN chmod +x /entrypoint.sh
 ADD templates /templates
+
+EXPOSE 8087
 
 # Start the gateway
 ENV LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib/x86_64-linux-gnu

@@ -23,24 +23,34 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
     <script>
-        var url = 'http://82.103.188.5:8080/hls/radio.m3u8';
-        if (Hls.isSupported()) {
-            var hls = new Hls();
-            hls.loadSource(url);
-            hls.attachMedia(player);
-            hls.on(Hls.Events.BUFFER_APPENDED, (e, d) => {
-                document.getElementById("buffer").innerHTML = "Buffer appended with fragment - " +
-                    d.frag.relurl;
-            });
-            hls.on(Hls.Events.LEVEL_LOADED, (e, d) => {
-                document.getElementById("level").innerHTML = "Loaded level " + d.level + " for bandwidth " + hls
-                    .bandwidthEstimate + ", url: " + d.details.url;
-            });
-            hls.on(Hls.Events.FRAG_CHANGED, (e, d) => {
-                document.getElementById("fragment").innerHTML = "Current fragment - " +
-                    d.frag.relurl;
-            });
-        }
+        var hls = new Hls();
+
+        player.addEventListener('play', e => {
+            var url = 'http://localhost:8080/hls/radio.m3u8';
+            if (Hls.isSupported()) {
+                hls.loadSource(url);
+                hls.attachMedia(player);
+                hls.on(Hls.Events.BUFFER_APPENDED, (e, d) => {
+                    document.getElementById("buffer").innerHTML = "Buffer appended with fragment - " +
+                        d.frag.relurl;
+                });
+                hls.on(Hls.Events.LEVEL_LOADED, (e, d) => {
+                    document.getElementById("level").innerHTML = "Loaded level " + d.level +
+                        " for bandwidth " + hls
+                        .bandwidthEstimate + ", url: " + d.details.url;
+                });
+                hls.on(Hls.Events.FRAG_CHANGED, (e, d) => {
+                    document.getElementById("fragment").innerHTML = "Current fragment - " +
+                        d.frag.relurl;
+                });
+            }
+        })
+        player.addEventListener('pause', e => {
+            hls.detachMedia(player);
+            document.getElementById("buffer").innerHTML = "";
+            document.getElementById("level").innerHTML = "";
+            document.getElementById("fragment").innerHTML = "";
+        })
     </script>
     <script src="/js/radio.js"></script>
 </body>

@@ -19,7 +19,7 @@ function createSession() {
         return;
     }
     janus = new Janus({
-        server: 'http://82.103.188.4:8088/janus',
+        server: 'http://localhost:8087/janus',
         success: function () {
             // attach to streaming plugin
             janus.attach({

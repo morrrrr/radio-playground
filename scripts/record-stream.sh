@@ -5,8 +5,8 @@ echo 'Please specify the radio context. Options: (H) - HLS, (W) - WebRTC'
 
 read ctx
 
-hls_server_url=rtmp://82.103.188.5:1935/live/radio
-janus_server_url=rtp://82.103.188.4:5002
+hls_server_url=rtmp://hls-server:1935/live/radio
+janus_server_url=rtp://janus-server:5002
 audio_location=https://traffic.libsyn.com/secure/forcedn/gpbaudio/federico_brundo.mp3
 
 if [ $ctx == 'H' ]; then
