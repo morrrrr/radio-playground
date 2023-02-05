@@ -2,7 +2,11 @@
 
 Radio Playground is an educational project purposed to provide playground for different audio streaming solutions. It is meant as a learning and testing tool.
 
+<<<<<<< HEAD
 Project is built as a docker network where multiple containers play their role in the radio streaming network. At the current stage, HLS and WebRTC playgrounds are provided.
+=======
+At the current stage, the playground provides the WebRTC and HLS streaming.
+>>>>>>> b9179a3e4ffbf43dc7096ba3a48d526c27307fe7
 
 ## Projects Leveraged
 
