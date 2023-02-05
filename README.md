@@ -43,7 +43,7 @@ The second playground explores the WebRTC-based streaming.
 
 Web Real-Time Communication (WebRTC) is a streaming project that provides real-time or ultra-low latency. The basis of WebRTC is a series of JavaScript APIs that allow us to establish a peer to peer connection between two browsers to exchange data such as audio and video, allowing us to create applications with audio and video calling features.
 
-In order to relieve the full peer-to-peer meshes which are heavy on the client side, a WebRTC gateway can be used. In this project, a Janus server is leveraged which ingests a RTP radio stream and serves it to WebRTC client browsers.
+In order to relieve the full peer-to-peer meshes which are heavy on the client side, a WebRTC gateway can be used. In this project, a Janus server is leveraged which ingests RTP radio streams and relays them to peer browsers. 
 
 ## Start
 ### Debian Distros
