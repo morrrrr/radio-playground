@@ -28,7 +28,7 @@ Project is built as a docker network where multiple containers play their role i
 
 **Janus Server** - serves audio stream in a WebRTC fashion. Leverages the [janus-gateway](https://github.com/meetecho/janus-gateway). Currently, configured to ingest RTP streams through the 5002 port. 
 
-**HLS Server** - serves audio stream as a HLS stream. Leverages the [rtmp-hls streaming server](https://hub.docker.com/r/alqutami/rtmp-hls). Ingests RTMP streams through the 1935 port, fragments them into different bitrate segments, creates and servers manifest to clients.
+**HLS Server** - serves audio stream as a HLS stream. Leverages the [rtmp-hls streaming server](https://hub.docker.com/r/alqutami/rtmp-hls). Ingests RTMP streams through the 1935 port, fragments them into different bitrate segments, creates and serves manifests to clients.
 
 ## Theory
 ### RTMP-HLS Streaming
