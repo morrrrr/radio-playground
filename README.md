@@ -56,7 +56,7 @@ Run the start script:
 
     cd radio-playground/scripts && ./start.sh
 
-The scriptruns docker containers and starts the recording of the audio stream.
+The script runs docker containers and starts the recording of the audio stream.
 
 Players can be accessed via browser:
 
@@ -65,5 +65,10 @@ HLS player
 
 WebRTC player
     http://localhost:8083/radio/webrtc
+
+## Future Plans
+
+* HLS end-to-end streaming playground
+* Emulate docker network instabilities and test the streaming performance 
 
 
