@@ -48,7 +48,9 @@ In order to relieve the full peer-to-peer meshes which are heavy on the client s
 ## Start
 ### Debian Distros
 
-The project was built on and for debian distributions. To start the project, first clone the repository:
+The project was built on and for debian distributions. You will need docker and docker-compose to start the project.
+
+To start the project, first clone the repository:
 
     git clone https://github.com/morrrrr/radio-playground.git
 
